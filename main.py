@@ -41,33 +41,38 @@ def sortmax(a):
 
 
 def identify(x):
-    #定义函数，输出等于输入
+    # 定义函数，输出等于输入
     return x
 
 
-def mean_squared_error(y,t):
-    #均方误差
-    return 0.5*np.sum((y-t)**2)
+def mean_squared_error(y, t):
+    # 均方误差
+    return 0.5 * np.sum((y - t) ** 2)
 
-def cross_entropy_error(y,t):
-    #交叉熵误差
-    delta=1e-7 # 防止为0时，logy输出负无穷
-    return -np.sum(t*np.log(y+delta))
+
+def cross_entropy_error(y, t):
+    # 交叉熵误差
+    delta = 1e-7  # 防止为0时，logy输出负无穷
+    return -np.sum(t * np.log(y + delta))
+
+
+def numerical_diff(f, x):
+    # 求导
+    h = 1e-4  # 0.00001
+    return (f(x + h) - f(f - h)) / (2 * h)
+
+
+def function1(x):
+    return 1e-2 * x ** 2 + 0.1 * x
+
+
+def function2(x):
+    return np.sum(x**2)
 
 
 if __name__ == '__main__':
-    x1 = np.array([1.0, 0.5])
-    w1 = np.array([[0.1, 0.3, 0.5], [0.2, 0.4, 0.6]])
-    b1 = np.array([0.1, 0.2, 0.3])
-    a1 = np.dot(x1, w1) + b1
-    y1 = sigmoid(a1)
-
-    w2 = np.array([[0.1, 0.4], [0.2, 0.5], [0.3, 0.6]])
-    b2 = np.array([0.1, 0.2])
-    a2 = np.dot(y1, w2) + b2
-    y2 = sigmoid(a2)
-
-    w3 = np.array([[0.1, 0.3], [0.2, 0.4]])
-    b3 = np.array([0.1, 0.2])
-    a3 = np.dot(y2, w3) + b3
-    print(a3)
+    x = np.arange(0, 4, 1)
+    y = function2(x)
+    print(y)
+    plt.plot(x, y)
+    plt.show()
