@@ -32,6 +32,7 @@ def relu(x):
 
 
 def sortmax(a):
+    # 寻找数组中可能最大
     c = np.max(a)
     exp_a = np.exp(a - c)  # 防止溢出，推理在《深度学习入门xx》p228页
     exp_a_sum = np.sum(exp_a)
@@ -40,7 +41,13 @@ def sortmax(a):
 
 
 def identify(x):
+    #定义函数，输出等于输入
     return x
+
+
+def mean_squared_error(y,t):
+    #均方误差
+    return 0.5*np.sum((y-t)**2)
 
 
 if __name__ == '__main__':
