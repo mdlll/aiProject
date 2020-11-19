@@ -33,7 +33,7 @@ def get_file_content(filePath):
 image = get_file_content('C:\\Users\\Administrator\\Desktop\\4.png')
 
 """ 调用菜品识别 """
-aa=client.dishDetect(image);
+aa=client.dishDetect(image)
 print(aa)
 """ 如果有可选参数 """
 options = {}

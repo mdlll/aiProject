@@ -67,7 +67,7 @@ def function1(x):
 
 
 def function2(x):
-    return np.sum(x**2)
+    return np.sum(x ** 2)
 
 
 if __name__ == '__main__':
