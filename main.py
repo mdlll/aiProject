@@ -31,7 +31,7 @@ def relu(x):
     return np.maximum(0, x)
 
 
-def sortmax(a):
+def softmax(a):
     # 寻找数组中可能最大
     c = np.max(a)
     exp_a = np.exp(a - c)  # 防止溢出，推理在《深度学习入门xx》p228页
@@ -71,8 +71,7 @@ def function2(x):
 
 
 if __name__ == '__main__':
-    x = np.arange(0, 4, 1)
-    y = function2(x)
-    print(y)
-    plt.plot(x, y)
-    plt.show()
+    y = [0.1, 0.05, 0.6, 0.0, 0.05, 0.1, 0.0, 0.1, 0.0, 0.0]
+    t = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+    print(mean_squared_error(np.array(y), np.array(t)))
+
