@@ -1,0 +1,5 @@
+# cross_entropy_error_mini_batch
+import numpy as np
+from main import cross_entropy_error
+def mini_cross_entropy_error(t,y,n):
+    np.sum(cross_entropy_error(t,y))
